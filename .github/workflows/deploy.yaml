@@ -34,3 +34,4 @@ jobs:
           aws-region: us-east-1
           role-to-assume: arn:aws:iam::590183989742:role/fem-cicd-service
       - run: aws s3 sync dist/ s3://fem-cicd-service-590183989742-us-east-1-an/ --delete
+      - run: aws cloudfront create-invalidation --distribution-id E3RZU5KLGYRGKL --paths "/*"
